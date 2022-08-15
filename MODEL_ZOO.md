@@ -17,20 +17,20 @@ We initialize the detection models with ImageNet weights from Caffe2, the same a
 The pre-trained models are available in the link in the model id.
 
 backbone | type | lr sched | im / gpu | train mem(GB) | train time (s/iter) | total train time(hr) | inference time(s/im) | box AP | mask AP | model id
--- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
-R-50-C4 | Fast | 1x | 1 | 5.8 | 0.4036 | 20.2 | 0.17130 | 34.8 | - | [6358800](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_R_50_C4_1x.pth)
-R-50-FPN | Fast | 1x | 2 | 4.4 | 0.3530 | 8.8 | 0.12580 | 36.8 | - | [6358793](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_R_50_FPN_1x.pth)
-R-101-FPN | Fast | 1x | 2 | 7.1 | 0.4591 | 11.5 | 0.143149 | 39.1 | - | [6358804](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_R_101_FPN_1x.pth)
-X-101-32x8d-FPN | Fast | 1x | 1 | 7.6 | 0.7007 | 35.0 | 0.209965 | 41.2 | - | [6358717](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_X_101_32x8d_FPN_1x.pth)
-R-50-C4 | Mask | 1x | 1 | 5.8 | 0.4520 | 22.6 | 0.17796 + 0.028 | 35.6 | 31.5 | [6358801](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_R_50_C4_1x.pth)
-R-50-FPN | Mask | 1x | 2 | 5.2 | 0.4536 | 11.3 | 0.12966 + 0.034 | 37.8 | 34.2 | [6358792](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_R_50_FPN_1x.pth)
-R-101-FPN | Mask | 1x | 2 | 7.9 | 0.5665 | 14.2 | 0.15384 + 0.034 | 40.1 | 36.1 | [6358805](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_R_101_FPN_1x.pth)
-X-101-32x8d-FPN | Mask | 1x | 1 | 7.8 | 0.7562 | 37.8 | 0.21739 + 0.034 | 42.2 | 37.8 | [6358718](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_X_101_32x8d_FPN_1x.pth)
+---|---|---|---|---|---|---|---|---|---|---
+R-50-C4 | Fast | 1x | 1 | 5.8 | 0.4036 | 20.2 | 0.17130 | 34.8 | -       | [6358800](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_R_50_C4_1x.pth)
+R-50-FPN | Fast | 1x | 2 | 4.4 | 0.3530 | 8.8 | 0.12580 | 36.8 | -       | [6358793](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_R_50_FPN_1x.pth)
+R-101-FPN | Fast | 1x | 2 | 7.1 | 0.4591 | 11.5 | 0.143149 | 39.1 | -       | [6358804](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_R_101_FPN_1x.pth)
+X-101-32x8d-FPN | Fast | 1x | 1 | 7.6 | 0.7007 | 35.0 | 0.209965 | 41.2 | -       | [6358717](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_X_101_32x8d_FPN_1x.pth)
+R-50-C4 | Mask | 1x | 1 | 5.8 | 0.4520 | 22.6 | 0.17796 + 0.028 | 35.6 | 31.5    | [6358801](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_R_50_C4_1x.pth)
+R-50-FPN | Mask | 1x | 2 | 5.2 | 0.4536 | 11.3 | 0.12966 + 0.034 | 37.8 | 34.2    | [6358792](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_R_50_FPN_1x.pth)
+R-101-FPN | Mask | 1x | 2 | 7.9 | 0.5665 | 14.2 | 0.15384 + 0.034 | 40.1 | 36.1    | [6358805](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_R_101_FPN_1x.pth)
+X-101-32x8d-FPN | Mask | 1x | 1 | 7.8 | 0.7562 | 37.8 | 0.21739 + 0.034 | 42.2 | 37.8    | [6358718](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_X_101_32x8d_FPN_1x.pth)
 
 For person keypoint detection:
 
 backbone | type | lr sched | im / gpu | train mem(GB) | train time (s/iter) | total train time(hr) | inference time(s/im) | box AP | keypoint AP | model id
--- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
+---|---|---|---|---|---|---|---|---|---|---
 R-50-FPN | Keypoint | 1x | 2 | 5.7 | 0.3771 | 9.4 | 0.10941 | 53.7 | 64.3 | 9981060
 
 ### Light-weight Model baselines
@@ -48,7 +48,7 @@ The following inference time is reported:
 The pre-trained models are available in the link in the model id.
 
 backbone | type | resolution | lr sched | im / gpu | train mem(GB) | train time (s/iter) | total train time (hr) | inference total batch=8 (s/im) | inference model batch=8 (s/im) | inference model batch=1 (s/im) | inference caffe2 batch=1 (s/im) | box AP | mask AP | model id
--- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
 [R-50-C4](configs/e2e_faster_rcnn_R_50_C4_1x.yaml) (reference) | Fast | 800 | 1x | 1 | 5.8 | 0.4036 | 20.2 | 0.0875 | **0.0793** | 0.0831 | **0.0625** | 34.4 | - | f35857197
 [fbnet_chamv1a](configs/e2e_faster_rcnn_fbnet_chamv1a_600.yaml) | Fast | 600 | 0.75x | 12 | 13.6 | 0.5444 | 20.5 | 0.0315 | **0.0260** | 0.0376 | **0.0188** | 33.5 | - | [f100940543](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_fbnet_chamv1a_600.pth)
 [fbnet_default](configs/e2e_faster_rcnn_fbnet_600.yaml) | Fast | 600 | 0.5x | 16 | 11.1 | 0.4872 | 12.5 | 0.0316 | **0.0250** | 0.0297 | **0.0130** | 28.2 | - | [f101086388](https://download.pytorch.org/models/maskrcnn/e2e_faster_rcnn_fbnet_600.pth)
@@ -68,7 +68,7 @@ about different hardware applies here.
 The numbers here are in seconds / iteration. The lower, the better.
 
 type | Detectron (P100) | mmdetection (V100) | maskrcnn_benchmark (V100)
--- | -- | -- | --
+---|---|---|---
 Faster R-CNN R-50 C4 | 0.566 | - | 0.4036
 Faster R-CNN R-50 FPN | 0.544 | 0.554 | 0.3530
 Faster R-CNN R-101 FPN | 0.647 | - | 0.4591
@@ -83,7 +83,7 @@ Mask R-CNN X-101-32x8d FPN | 0.961 | - | 0.7562
 The lower, the better
 
 type | Detectron (P100) | mmdetection (V100) | maskrcnn_benchmark (V100)
--- | -- | -- | --
+---|---|---|---
 Faster R-CNN R-50 C4 | 6.3 | - | 5.8
 Faster R-CNN R-50 FPN | 7.2 | 4.9 | 4.4
 Faster R-CNN R-101 FPN | 8.9 | - | 7.1
@@ -98,7 +98,7 @@ Mask R-CNN X-101-32x8d FPN | 7.7 | - | 7.8
 The higher, the better
 
 type | Detectron (P100) | mmdetection (V100) | maskrcnn_benchmark (V100)
--- | -- | -- | --
+---|---|---|---
 Faster R-CNN R-50 C4 | 34.8 | - | 34.8
 Faster R-CNN R-50 FPN | 36.7 | 36.7 | 36.8
 Faster R-CNN R-101 FPN | 39.4 | - | 39.1

@@ -66,7 +66,15 @@ class FCOSPostProcessor(torch.nn.Module):
         centerness = centerness.reshape(N, -1).sigmoid()
 
         candidate_inds = box_cls > self.pre_nms_thresh
-        pre_nms_top_n = candidate_inds.view(N, -1).sum(1)
+        '''
+        RuntimeError: view
+        size is not compatible
+        with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.
+        出现这个原因主要就是因为view()需要Tensor中的元素地址是连续的，因为可能出现Tensor不连续的情况，
+        所以修改方法为：在.view前加.contiguous()，使其变为连续就ok, or using .reshape(N,-1)
+        '''
+        #pre_nms_top_n = candidate_inds.view(N, -1).sum(1)
+        pre_nms_top_n = candidate_inds.reshape(N, -1).sum(1)
         pre_nms_top_n = pre_nms_top_n.clamp(max=self.pre_nms_top_n)
 
         # multiply the classification scores with centerness scores
